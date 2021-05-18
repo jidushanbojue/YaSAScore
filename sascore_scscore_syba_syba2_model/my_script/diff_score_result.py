@@ -69,26 +69,10 @@ def generate_compare_result(src_file, result_file):
    
         
 if __name__ == '__main__':
-    # base_dir = '/home/cadd/PycharmProjects/sascore_scscore_syba_syba2_model/my_data'
-    # src_file = os.path.join(base_dir, 'all_structure_smiles.csv')
-    # result_file = os.path.join(base_dir, 'three_models_result.csv')
-    # generate_compare_result(src_file=src_file, result_file=result_file)
+
 
     base_dir = '/home/baiqing/PycharmProjects/syba-master/my_data'
-    # src_file = os.path.join(base_dir, 'top50_count_binary_merged_test_min_3_3_DNN.csv')
-    # result_file = os.path.join(base_dir, 'testset_four_models_result_DNN_new_syba.csv')
 
-    # src_file = os.path.join(base_dir, 'top50_count_binary_merged_case3_min_3_3_DNN.csv')
-    # result_file = os.path.join(base_dir, 'case3_four_models_result_new_syba.csv')
-
-    # src_file = os.path.join(base_dir, 'top50_count_binary_merged_case1_min_3_3_DNN.csv')
-    # result_file = os.path.join(base_dir, 'case1_four_models_result.csv')
-
-    # src_file = os.path.join(base_dir, 'top50_count_binary_merged_alltest_min_3_3_DNN.csv')
-    # result_file = os.path.join(base_dir, 'testset_four_models_result_DNN_syba_and_mysyba.csv')
-
-    # src_file = os.path.join(base_dir, 'steps_add_degree_new_24w_cluster.csv')
-    # result_file = os.path.join(base_dir, '24w_cluster_syba_and_mysyba.csv')
 
     # src_file = os.path.join(base_dir, '24w_test_df_seed0.csv')
     # result_file = os.path.join(base_dir, '24w_test_df_seed0_syba_and_mysyba.csv')

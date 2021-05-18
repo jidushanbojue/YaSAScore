@@ -112,7 +112,7 @@ def get_degree(G, res_file):
 
 
 if __name__ == '__main__':
-    base_dir = '/home/baiqing/PycharmProjects/ReactionDB/data'
+    base_dir = ''
     # src_file = os.path.join(base_dir, 'reaction_to_structure_no_dup.csv')
     # src_file = os.path.join(base_dir, 'reaction_to_structure_new_1.csv') ### USPTO+Pistachio
     src_file = os.path.join(base_dir, 'reaction_to_structure_USPTO.csv')
@@ -121,12 +121,12 @@ if __name__ == '__main__':
     # print('Done')
 
 
-    # graphml_file = '/home/baiqing/PycharmProjects/ReactionDB/data/all_graph_with_relationiship_new_1.graphml'
-    # node_degree_file = os.path.join(base_dir, 'node_degree_with_relationship_new_1.csv')
-    # G = nx.read_graphml(graphml_file)
-    # G_reverse = G.reverse()
-    # nx.write_graphml(G_reverse, '../data/all_graph_with_relationship_reverse_new_1.graphml')
-    # get_degree(G, node_degree_file)
-    # print('Done')
+    graphml_file = 'uspto_graph_with_relationship.graphml'
+    node_degree_file = os.path.join(base_dir, 'node_degree_with_relationship_uspto.csv')
+    G = nx.read_graphml(graphml_file)
+    G_reverse = G.reverse()
+    nx.write_graphml(G_reverse, '../data/uspto_graph_with_relationship_reverse.graphml')
+    get_degree(G, node_degree_file)
+    print('Done')
 
 
