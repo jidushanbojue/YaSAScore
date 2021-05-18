@@ -5,6 +5,11 @@ The code was built based on CMPNN (https://github.com/SY575/CMPNN), SYBA(https:/
 
 Prediction results of compound synthesis accessibility (SA) based on the a refined chemical network constructed on the USPTO and Pistachio reaction datasets. 
 
+MODEL | ROC-AUC | ACC | MCC
+---  | :---: | :---: | :---:
+CMPNN| 0.791 | 0.715 | 0.434
+DNN-ECFP|0.749|0.685 |0.371
+
 ## Quick start
 
 ### Template extract
