@@ -5,9 +5,9 @@ The code was built based on CMPNN (https://github.com/SY575/CMPNN), SYBA(https:/
 
 Prediction results of compound synthesis accessibility (SA) based on the a refined chemical network constructed on the USPTO and Pistachio reaction datasets. 
 
-##Quick start
+## Quick start
 
-###Template extract
+### Template extract
     python Template_Extraction_and_Validation.py -d uspto_pistachio_split_folder -o uspto_pistachio_result -f template -r 1
 
 
@@ -25,7 +25,7 @@ Prediction results of compound synthesis accessibility (SA) based on the a refin
     
     python get_reaction_steps.py -gf uspto_graph_with_relationship_reverse.graphml -df node_degree_with_relationship_uspto.csv -rf reaction_to_structure_USPTO.csv -o result_folder
 
-###CMPNN training
+### CMPNN training
     `python train.py -data_path data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folder 1 --gpu 0 --epochs 30`
     `python predict.py --data_path data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
 
