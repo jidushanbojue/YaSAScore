@@ -1,0 +1,12 @@
+setup.py
+aizynthfinder/MCTSglobals.py
+aizynthfinder/__init__.py
+aizynthfinder/aizynthfinder.py
+aizynthfinder/node.py
+aizynthfinder/state.py
+aizynthfinder.egg-info/PKG-INFO
+aizynthfinder.egg-info/SOURCES.txt
+aizynthfinder.egg-info/dependency_links.txt
+aizynthfinder.egg-info/not-zip-safe
+aizynthfinder.egg-info/requires.txt
+aizynthfinder.egg-info/top_level.txt

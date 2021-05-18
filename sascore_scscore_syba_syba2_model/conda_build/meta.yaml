@@ -1,0 +1,34 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: syba
+  version: {{ data.get('version') }}
+
+build:
+  noarch: python
+#  always_include_files:
+#    - bin/nonpher.sh
+  preserve_egg_dir: True
+
+extra:
+  channels:
+    - rdkit
+    - lich
+
+source:
+  path: ../
+
+requirements:
+  build:
+      - python
+      - setuptools
+
+  run:
+      - python >=3.6
+      - rdkit
+
+about:
+  home: https://github.com/lich-uct/syba
+  license: GPL-3.0
+  license_file: LICENSE
+  summary: "Software library for classifying easy- and hard-to-synthesize structures"

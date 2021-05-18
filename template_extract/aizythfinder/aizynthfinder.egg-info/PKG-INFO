@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: aizynthfinder
+Version: 0.1
+Summary: Retrosynthetic route finding using neural network guided Monte-Carlo tree search.
+Home-page: UNKNOWN
+Author: Esben Jannik Bjerrum
+Author-email: esben.bjerrum@astrazeneca.com
+License: proprietary
+Description: UNKNOWN
+Platform: UNKNOWN
