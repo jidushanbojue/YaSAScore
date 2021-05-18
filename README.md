@@ -8,7 +8,11 @@ Prediction results of compound synthesis accessibility (SA) based on the a refin
 MODEL | ROC-AUC | ACC | MCC
 ---  | :---: | :---: | :---:
 CMPNN| 0.791 | 0.715 | 0.434
-DNN-ECFP|0.749|0.685 |0.371
+DNN-ECFP|0.749|0.685 | 0.371
+SYBA | 0.465 | 0.497 | -0.012
+SYBA-2|0.76  | 0.69  | 0.382
+SAScore|0.513| 0.498 | -0.011
+SCScore|0.621|0.582  | 0.167
 
 ## Quick start
 
