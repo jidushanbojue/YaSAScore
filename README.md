@@ -28,7 +28,7 @@ SCScore|0.621|0.582  | 0.167
 
     python generate_reaction_structure_relationship.py -d uspto_reaction_split -o uspto_reaction_split_result -s data/chemical_reaction_network/all_structure_uspto.csv
 
-    "combining the spliting files in uspto_reaction_split_result
+    `combining the spliting files in uspto_reaction_split_result`
 
     python generate_network_multiprocess.py
     
