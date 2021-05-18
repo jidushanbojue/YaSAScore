@@ -29,7 +29,7 @@ Prediction results of compound synthesis accessibility (SA) based on the a refin
     `python train.py -data_path data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folder 1 --gpu 0 --epochs 30`
     `python predict.py --data_path data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
 
-###SYBA training
+### SYBA training
     `
 
 
