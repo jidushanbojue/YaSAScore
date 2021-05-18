@@ -37,8 +37,6 @@ def smiles_to_ecfp(product, size=2048):
     return arr
 
 
-
-
 class FPSequnce(Sequence):
     def __init__(self, input_matrix, label_matrix, batch_size):
         self.input_matrix = input_matrix
@@ -124,8 +122,6 @@ def generate_dataset(src_file):
     return input_csr, input_label
 
 
-
-
 def DNN_ECFP_training(train_file, val_file, test_file, result_picture):
 
     # generate_dataset(train_file)
@@ -191,15 +187,22 @@ if __name__ == '__main__':
 
     #### all data #####
 
-    base_dir = '/data/baiqing/src_data/reaction_step/frag_descriptor_whole_molecules'
+    base_dir = 'projects/data'
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
 
     ##### ECFP  ####
     train_file = os.path.join(base_dir, '24w_train_df_seed0.csv')
     val_file = os.path.join(base_dir, '24w_val_df_seed0.csv')
+
+    ### test set from balanced set
     # test_file = os.path.join(base_dir, '24w_test_df_seed0.csv')
+
+    ### test set from imbalanced set
     test_file = os.path.join(base_dir, '24w_cmpnn_remain_all_test.csv')
+
     result_picture = os.path.join(script_dir, '19w_min_ecfp_3_3_0.0001_3layers_all_test.png')
+
+
     DNN_ECFP_training(train_file, val_file, test_file, result_picture)
     ######################

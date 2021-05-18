@@ -58,17 +58,8 @@ def processFile_1(path):
 
 
 
-# hs_fragments, hs_compounds = processFile('../docs/data/structures_1.csv.gz', smi_col=2)
-# es_fragments, es_compounds = processFile('../docs/data/structures_2.csv.gz', smi_col=1)
-
-# hs_fragments, hs_compounds = processFile_1('../my_data/HS_new.csv')
-# es_fragments, es_compounds = processFile_1('../my_data/ES_new.csv')
-
-# hs_fragments, hs_compounds = processFile_1('../my_data/HS_min_3_last.csv')
-# es_fragments, es_compounds = processFile_1('../my_data/ES_min_0_3_12w_cluster.csv')
-
-hs_fragments, hs_compounds = processFile_1('../../data/syba_data/24w_train_HS.csv')
-es_fragments, es_compounds = processFile_1('../../data/syba_data/24w_train_ES.csv')
+hs_fragments, hs_compounds = processFile_1('data/24w_train_HS.csv')
+es_fragments, es_compounds = processFile_1('data/24w_train_ES.csv')
 
 #
 def mergeFragmentCounts(es_fragments, hs_fragments):

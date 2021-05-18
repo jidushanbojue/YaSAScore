@@ -56,10 +56,6 @@ def generate_compare_result(src_file, result_file):
         # result_list.append(res)
 
 
-    # print('Begining to get three models result')
-    # pool = Pool(28)
-    # result = pool.map(partial_worker, df['smiles'][:100])
-    # result_df = pd.DataFrame(result_list, columns=['syba_score', 'sa_score', 'sc_score'])
     df['syba_score'] = syba_list
     df['mysyba_score'] = my_syba_list
     df['sa_score'] = sa_list
@@ -71,7 +67,7 @@ def generate_compare_result(src_file, result_file):
 if __name__ == '__main__':
 
 
-    base_dir = '/home/baiqing/PycharmProjects/syba-master/my_data'
+    base_dir = 'projects/data'
 
 
     # src_file = os.path.join(base_dir, '24w_test_df_seed0.csv')

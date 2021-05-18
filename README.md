@@ -25,12 +25,25 @@ Prediction results of compound synthesis accessibility (SA) based on the a refin
     
     python get_reaction_steps.py -gf uspto_graph_with_relationship_reverse.graphml -df node_degree_with_relationship_uspto.csv -rf reaction_to_structure_USPTO.csv -o result_folder
 
-### CMPNN training
-    `python train.py -data_path data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folder 1 --gpu 0 --epochs 30`
-    `python predict.py --data_path data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
+### CMPNN training and predict
+    python train.py -data_path data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folder 1 --gpu 0 --epochs 30
+    python predict.py --data_path data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
 
-### SYBA training
-    `
+### SYBA-2 training
+    cd sascore_scscore_syba_syba2_model/scipt
+    python syba-2_training.py
+    
+    Then put the result "syba_ES_cluster_HS_score_train_val.csv" to syba/resources
+
+### syba, syba-2, sascore, scscore predict
+    cd sascore_scscore_syba_syba2_model/scipt
+    python diff_score_result.py
+    to get the predicted result of syba, syba-2, sascore, scscore models respectively.
+    
+### DNN training and predict
+    cd DNN_model
+    python dnn_model.py
+    
 
 
 
