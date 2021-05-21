@@ -1,2 +1,0 @@
-data filter=lfs diff=lfs merge=lfs -text
-data.tar.gz filter=lfs diff=lfs merge=lfs -text
