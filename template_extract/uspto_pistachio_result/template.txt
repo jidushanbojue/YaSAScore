@@ -1,0 +1,8 @@
+-------- Rule Extraction Statistics --------
+
+Total Reaction Count: 1000
+Total Reactions Extracted: 808
+Reaction is not suitable for processing or invalid: 116
+Template Validation Failure: 75
+Number of cores: 158
+Total Execution Time: 0:0:32.
