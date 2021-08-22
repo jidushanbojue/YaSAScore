@@ -206,8 +206,8 @@ if __name__ == '__main__':
 
     ### My code ###
     # args = parser.parse_args(['-d', '/mnt/home/boqing/Data/retro_synthesis/src_data/uspto_pistachio_split', '-o', '/mnt/home/boqing/Data/retro_synthesis/src_data/uspto_pistachio_template', '-f', 'template', '-r', '1'])
-    args = parser.parse_args(['-d', './uspto_pistachio_add_idx_split', '-o', '/uspto_pistachio_template_add_idx', '-f', 'template', '-r', '1'])
-
+    # args = parser.parse_args(['-d', './uspto_pistachio_add_idx_split', '-o', '/uspto_pistachio_template_add_idx', '-f', 'template', '-r', '1'])
+    args = parser.parse_args()
 
     data_source = args.data
     if os.path.exists(args.out):
