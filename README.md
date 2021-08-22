@@ -17,6 +17,7 @@ SCScore|0.621|0.582  | 0.167
 ## Quick start
 
 ### Template extract
+    cd template_extract
     python Template_Extraction_and_Validation.py -d uspto_pistachio_split_folder -o uspto_pistachio_result -f template -r 1
 
 
