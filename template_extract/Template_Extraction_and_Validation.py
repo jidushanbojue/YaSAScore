@@ -229,12 +229,12 @@ if __name__ == '__main__':
 
     start = timeit.default_timer()
 
-    # with Pool(cores-2) as p:
-    #      process_dummy = partial(process_reaction_data, results_file=output_file, radius=args.radius)
-    #      p.map(process_dummy, data)
+    with Pool(cores-2) as p:
+         process_dummy = partial(process_reaction_data, results_file=output_file, radius=args.radius)
+         p.map(process_dummy, data)
 
-    for data_file in data:
-        process_reaction_data(datafile=data_file, results_file=output_file, radius=args.radius)
+    # for data_file in data:
+    #     process_reaction_data(datafile=data_file, results_file=output_file, radius=args.radius)
 
 
     stop = timeit.default_timer()
