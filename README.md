@@ -18,6 +18,8 @@ SCScore|0.621|0.582  | 0.167
 
 ### Template extract
     cd template_extract
+    conda env create -f template_extract.yaml  ### create env
+    conda activate casp_env_tf2   ### change env
     mkdir uspto_pistachio_split_folder
     mkdir uspto_pistachio_result
     cd uspto_pistachio_split_folder
