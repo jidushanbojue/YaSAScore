@@ -9,6 +9,7 @@ from networkx import draw_networkx_labels
 from multiprocessing import Pool
 from collections import defaultdict
 import itertools as it
+import argparse
 
 def get_edges(info):
     name = info[0]
@@ -36,9 +37,9 @@ def get_edges_with_relationship(info):
 
 
 
-def generate_net(src_file):
+def generate_net(src_file, out_graph, reverse_graph, degree_file, cpu=10):
 
-    p = Pool(160)
+    p = Pool(cpu)
     G = nx.DiGraph()
 
     df = pd.read_csv(src_file)
@@ -68,41 +69,15 @@ def generate_net(src_file):
 
     G.add_edges_from(edges_list)
 
-    # nx.write_graphml(G, '../data/all_graph_with_relationiship_new_1.graphml')
-    # nx.write_gml(G, '../data/all_graph_with_relationiship_new_1.gml')
-    nx.write_graphml(G, '../data/uspto_graph_with_relationship.graphml')
+    get_degree(G, degree_file)
+    # nx.write_graphml(G, '../data/uspto_graph_with_relationship.graphml')
+    nx.write_graphml(G, out_graph)
+    print('Generating chemical knowledge graph')
 
+    G_reverse = G.reverse()
+    nx.write_graphml(G_reverse, reverse_graph)
+    print('Generating reverse chemical knowledge graph')
 
-    # for tpl in result_list:
-    #     get_edges_with_relationship(tpl)
-
-
-
-    # result = p.map(get_edges_with_relationship, result_list)
-    # for i in result:
-    #     print(i)
-    #     G.add_edges_from(i)
-    #     # edges = generate_edges(name, group)
-    #     # print(edges)
-    #     # G.add_edges_from(edges)
-    #
-    # nx.write_graphml(G, '../data/all_1.graphml')
-
-    # pos = spring_layout(G)
-    # nodes = draw_networkx_nodes(G, pos)
-    # # print(G.edges(data=True))
-    # nodes.set_edgecolor('y')
-    # nodes.set_color('r')
-    # lines = draw_networkx_edges(G, pos)
-    # draw_networkx_labels(G, pos)
-    # # nx.draw(G, with_labels='True', edge_color='r')
-    # # plt.axis('on')
-    # # plt.xticks([])
-    # # plt.yticks([])
-    # plt.show()
-
-    # nx.write_graphml('test.graphml')
-    # nx.draw(G, with_labels=True, font_weight='bold')
 
 def get_degree(G, res_file):
     df = pd.DataFrame(G.degree, columns=['structure_id', 'degree'])
@@ -112,21 +87,32 @@ def get_degree(G, res_file):
 
 
 if __name__ == '__main__':
-    base_dir = ''
-    # src_file = os.path.join(base_dir, 'reaction_to_structure_no_dup.csv')
-    # src_file = os.path.join(base_dir, 'reaction_to_structure_new_1.csv') ### USPTO+Pistachio
-    src_file = os.path.join(base_dir, 'reaction_to_structure_USPTO.csv')
+    parser = argparse.ArgumentParser(description='generate network multiprocessing')
+    parser.add_argument('-i', '--input', type=str, default=None, help='Specify the absolute path to the reaction_to_structure.csv')
+    parser.add_argument('-o', '--out_graph', type=str, default=None, help='Specify the absolute path to the network_graph')
+    parser.add_argument('-ro', '--reverse_graph', type=str, default=None, help='Specify the absolute path to the reverse-network_graph')
+    parser.add_argument('-d', '--degree', type=str, default=None, help='Specify the absolute path to the node degree of graph')
+    parser.add_argument('-n_cpu', '--num_cpu', type=int, default=8, help='Specify the number of cpu to use')
 
-    generate_net(src_file)
-    # print('Done')
+    # args = parser.parse_args(['-i' '/data/baiqing/PycharmProjects/yasascore_test/data/chemical_reaction_network/reaction_to_structure_USPTO_test.csv', '-o', '/data/baiqing/PycharmProjects/yasascore_test/data/uspto_graph_with_relationship_test.graphml', '-ro', '/data/baiqing/PycharmProjects/yasascore_test/data/uspto_graph_with_relationship_reverse_test.graphml', '-d', '/data/baiqing/PycharmProjects/yasascore_test/data/degree_test.csv'])
+    args = parser.parse_args()
 
 
-    graphml_file = 'uspto_graph_with_relationship.graphml'
-    node_degree_file = os.path.join(base_dir, 'node_degree_with_relationship_uspto.csv')
-    G = nx.read_graphml(graphml_file)
-    G_reverse = G.reverse()
-    nx.write_graphml(G_reverse, '../data/uspto_graph_with_relationship_reverse.graphml')
-    get_degree(G, node_degree_file)
+    src_file = args.input
+    out_graph = args.out_graph
+    reverse_graph = args.reverse_graph
+    degree_file = args.degree
+    num_cpu = args.num_cpu
+    generate_net(src_file, out_graph, reverse_graph, degree_file, num_cpu)
     print('Done')
+
+
+    # graphml_file = 'uspto_graph_with_relationship.graphml'
+    # node_degree_file = os.path.join(base_dir, 'node_degree_with_relationship_uspto.csv')
+    # G = nx.read_graphml(graphml_file)
+    # G_reverse = G.reverse()
+    # nx.write_graphml(G_reverse, '../data/uspto_graph_with_relationship_reverse.graphml')
+    # get_degree(G, node_degree_file)
+    # print('Done')
 
 

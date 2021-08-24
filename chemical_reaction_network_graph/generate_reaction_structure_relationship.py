@@ -80,8 +80,8 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--structure', type=str, default=None, help='Specify the structure file')
     # parser.
     # args = parser.parse_args(['-d', '/home/baiqing/src_data/reaction_step/uspto_pistachio/test', '-o', '/home/baiqing/src_data/reaction_step/uspto_pistachio/test_result', '-s', '/home/baiqing/src_data/reaction_step/uspto_pistachio/all_structure.csv'])
-    args = parser.parse_args(['-d', '/data/baiqing/src_data/reaction_step/uspto/uspto_reaction_split', '-o', '/data/baiqing/src_data/reaction_step/uspto/uspto_reaction_split_result', '-s', '/data/baiqing/src_data/reaction_step/uspto/all_structure_uspto.csv'])
-    # args = parser.parse_args()
+    # args = parser.parse_args(['-d', '/data/baiqing/src_data/reaction_step/uspto/uspto_reaction_split', '-o', '/data/baiqing/src_data/reaction_step/uspto/uspto_reaction_split_result', '-s', '/data/baiqing/src_data/reaction_step/uspto/all_structure_uspto.csv'])
+    args = parser.parse_args()
     data_source = args.data
 
     if os.path.exists(args.out):
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     #     worker(file)
 
 
-    Parallel(n_jobs=150)(delayed(worker)(reaction_file) for reaction_file in reaction_file_list)
+    Parallel(n_jobs=10)(delayed(worker)(reaction_file) for reaction_file in reaction_file_list)
 
     # with closing(Pool(50)) as pool:
     # pool = Pool(50)
