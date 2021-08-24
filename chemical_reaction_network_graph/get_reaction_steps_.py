@@ -100,12 +100,14 @@ def generate_shortest_path(graph_file, degree_file, reaction_to_structure):
     #     print(obj[0])
 
     process = partial(worker, iter_obj=short_path_iter, target_ids=zero_degree_ids)
-    # for products in worker_list:
-    #     process(product_ids=products)
+    for products in worker_list:
+        process(product_ids=products)
 
 
-    pool = Pool(30)
-    pool.map(process, worker_list)
+    # pool = Pool(cpu_num)
+    # pool.map(process, worker_list)
+    # pool.close()
+    # pool.join()
     #
     #
 
@@ -120,11 +122,16 @@ if __name__ == '__main__':
     # parser.add_argument('-is', '--iterator_start', type=int, default=0, help='Specify the iterator start index')
     # parser.add_argument('-ie', '--iterator_end', type=int, default=0, help='Specify the iterator end index')
     parser.add_argument('-o', '--out', type=str, default=None, help='Specify the absolute path to the folder to which the result should be written')
+    # parser.add_argument('-n_cpu', '--cpu_num', type=int, default=8, help='Specify the number of cpu to use')
 
-    args = parser.parse_args(['-gf', '/home/baiqing/PycharmProjects/ReactionDB/data/all_graph_with_relationship_reverse_new.graphml',
-                              '-df', '/home/baiqing/PycharmProjects/ReactionDB/data/node_degree_with_relationship_new.csv',
-                              '-rf', '/home/baiqing/PycharmProjects/ReactionDB/data/reaction_to_structure_new.csv',
-                              '-o', '/data/baiqing/src_data/reaction_step/shortest_path_multiprocess'])
+
+    # args = parser.parse_args(['-gf', '../../yasascore_test/data/chemical_reaction_network/uspto_graph_reverse.graph',
+    #                           '-df', '../../yasascore_test/data/chemical_reaction_network/degree.csv',
+    #                           '-rf', '../../yasascore_test/data/chemical_reaction_network/reaction_to_structure_USPTO_test.csv',
+    #                           '-o', '../../yasascore_test/data/chemical_reaction_network/shortest_path',
+    #                           '-n_cpu', '100'])
+
+    args = parser.parse_args()
 
     if os.path.exists(args.out):
         pass

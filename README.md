@@ -39,7 +39,7 @@ SCScore|0.621|0.582  | 0.167
     nawk 'FNR==1 && NR!=1{next;}{print}' * > ../../data/chemical_reaction_network/reaction_to_structure_USPTO.csv #### combine the split relation file to reaction_to_structure_USPTO.csv
     cd ../../
     python generate_network_multiprocess.py -i ../data/chemical_reaction_network/reaction_to_structure_USPTO.csv -o ../data/chemical_reaction_network/uspto_graph_with_relationship.graphml -ro ../data/chemical_reaction_network/uspto_graph_with_relationship_reverse.graphml -d ../data/chemical_reaction_network/uspto_graph_degree.csv -n_cpu 10
-    python get_reaction_steps.py -gf uspto_graph_with_relationship_reverse.graphml -df node_degree_with_relationship_uspto.csv -rf reaction_to_structure_USPTO.csv -o result_folder
+    python get_reaction_steps_.py -gf ../../yasascore_test/data/chemical_reaction_network/uspto_graph_reverse.graph -df ../../yasascore_test/data/chemical_reaction_network/degree.csv -rf ../../yasascore_test/data/chemical_reaction_network/reaction_to_structure_USPTO_test.csv -o ../../yasascore_test/data/chemical_reaction_network/shortest_path
 
 ### CMPNN training and predict
     python train.py -data_path data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folder 1 --gpu 0 --epochs 30
