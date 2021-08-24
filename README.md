@@ -35,7 +35,8 @@ SCScore|0.621|0.582  | 0.167
     split -l 1000 ../../data/chemical_reaction_network/all_reaction_uspto.csv -d -a 4
     cd ..
     python generate_reaction_structure_relationship.py -d uspto_reaction_split -o uspto_reaction_split_result -s ../data/chemical_reaction_network/all_structure_uspto.csv
-    `combining the spliting files in uspto_reaction_split_result`
+    cd uspto_reaction_split_result
+    nawk 'FNR==1 && NR!=1{next;}{print}' * > ../../data/chemical_reaction_network/reaction_to_structure_USPTO.csv #### combine the split relation file to reaction_to_structure_USPTO.csv
     python generate_network_multiprocess.py
     python get_reaction_steps.py -gf uspto_graph_with_relationship_reverse.graphml -df node_degree_with_relationship_uspto.csv -rf reaction_to_structure_USPTO.csv -o result_folder
 
