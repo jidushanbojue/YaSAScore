@@ -42,8 +42,11 @@ SCScore|0.621|0.582  | 0.167
     python get_reaction_steps.py -gf ../../yasascore_test/data/chemical_reaction_network/uspto_graph_reverse.graph -df ../../yasascore_test/data/chemical_reaction_network/degree.csv -rf ../../yasascore_test/data/chemical_reaction_network/reaction_to_structure_USPTO_test.csv -o ../../yasascore_test/data/chemical_reaction_network/shortest_path
 
 ### CMPNN training and predict
-    python train.py -data_path data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folder 1 --gpu 0 --epochs 30
-    python predict.py --data_path data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
+    cd CMPNN-master
+    conda env create -f cmpnn.yaml ### Create env
+#### Traing process by apply cmpnn model (without cross-validatte)    
+    python train.py --data_path ../data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folds 1 --gpu 0 --seed 0 --epochs 30 --train_csv ../data/cmpnn_data/24w_train_df_seed0.csv --validate_csv ../data/cmpnn_data/24w_val_df_seed0.csv --test_csv ../data/cmpnn_data/24w_test_df_seed0.csv
+    python predict.py --data_path ../data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
 
 ### SYBA-2 training
     cd sascore_scscore_syba_syba2_model/scipt

@@ -12,9 +12,9 @@ dependencies:
   - boost=1.74.0=py36h355b2fd_3
   - boost-cpp=1.74.0=h9d3c048_1
   - bzip2=1.0.8=h7b6447c_0
-  - ca-certificates=2021.1.19=h06a4308_1
+  - ca-certificates=2021.7.5=h06a4308_1
   - cairo=1.16.0=hf32fb01_1
-  - certifi=2020.12.5=py36h06a4308_0
+  - certifi=2021.5.30=py36h06a4308_0
   - cffi=1.14.5=py36h261ae71_0
   - cudatoolkit=10.1.243=h6bb024c_0
   - cudnn=7.6.5=cuda10.1_0
@@ -26,13 +26,17 @@ dependencies:
   - glib=2.67.4=h36276a3_1
   - icu=68.1=h2531618_0
   - intel-openmp=2020.2=254
+  - joblib=1.0.1=pyhd3eb1b0_0
   - jpeg=9b=h024ee3a_2
   - kiwisolver=1.3.1=py36h2531618_0
   - lcms2=2.11=h396b838_0
   - ld_impl_linux-64=2.33.1=h53a641e_7
   - libblas=3.9.0=8_mkl
+  - libcblas=3.9.0=8_mkl
   - libffi=3.3=he6710b0_2
   - libgcc-ng=9.3.0=h2828fa1_18
+  - libgfortran-ng=9.3.0=ha5ec8a7_17
+  - libgfortran5=9.3.0=ha5ec8a7_17
   - libgomp=9.3.0=h2828fa1_18
   - libiconv=1.16=h516909a_0
   - liblapack=3.9.0=8_mkl
@@ -57,7 +61,7 @@ dependencies:
   - ninja=1.10.2=py36hff7bd54_0
   - numpy-base=1.19.2=py36hfa32c7d_0
   - olefile=0.46=py36_0
-  - openssl=1.1.1j=h27cfd23_0
+  - openssl=1.1.1k=h27cfd23_0
   - pandas=1.1.3=py36he6710b0_0
   - pcre=8.44=he6710b0_0
   - pillow=8.1.2=py36he98fc37_0
@@ -88,7 +92,6 @@ dependencies:
   - zlib=1.2.11=h7b6447c_3
   - zstd=1.4.5=h9ceee32_0
   - pip:
-    - joblib==1.0.1
     - llvmlite==0.36.0
     - numba==0.53.0
     - numpy==1.19.5

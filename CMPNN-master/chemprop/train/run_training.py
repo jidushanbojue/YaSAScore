@@ -86,12 +86,16 @@ def run_training(args: Namespace, logger: Logger = None) -> List[float]:
 
         ###my_code###
         train_df = get_data_df(train_data)
-        train_df.to_csv('~/PycharmProjects/CMPNN-master/data/24w_train_df_seed0.csv')
-        val_df = get_data_df(val_data)
-        val_df.to_csv('~/PycharmProjects/CMPNN-master/data/24w_val_df_seed0.csv')
-        test_df = get_data_df(test_data)
-        test_df.to_csv('~/PycharmProjects/CMPNN-master/data/24w_test_df_seed0.csv')
+        # train_df.to_csv('~/PycharmProjects/CMPNN-master/data/24w_train_df_seed0.csv')
+        train_df.to_csv(args.train_csv)
 
+        val_df = get_data_df(val_data)
+        # val_df.to_csv('~/PycharmProjects/CMPNN-master/data/24w_val_df_seed0.csv')
+        val_df.to_csv((args.validate_csv))
+
+        test_df = get_data_df(test_data)
+        # test_df.to_csv('~/PycharmProjects/CMPNN-master/data/24w_test_df_seed0.csv')
+        test_df.to_csv(args.test_csv)
 
         ##########
 

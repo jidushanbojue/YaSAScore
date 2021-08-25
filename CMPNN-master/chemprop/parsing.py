@@ -181,6 +181,10 @@ def add_train_args(parser: ArgumentParser):
     parser.add_argument('--atom_messages', action='store_true', default=False,
                         help='Use messages on atoms instead of messages on bonds')
 
+    parser.add_argument('--train_csv', type=str, help='Path to training file')
+    parser.add_argument('--validate_csv', type=str, help='Path to validating file')
+    parser.add_argument('--test_csv', type=str, help='Path to testing file')
+
 
 def update_checkpoint_args(args: Namespace):
     """
@@ -320,6 +324,15 @@ def parse_train_args() -> Namespace:
     """
     parser = ArgumentParser()
     add_train_args(parser)
+    # args = parser.parse_args(['--data_path', '/data/baiqing/PycharmProjects/yasascore_test/data/cmpnn_data/24w_cmpnn.csv',
+    #                           '--dataset_type', 'classification',
+    #                           '--num_folds', '1',
+    #                           '--gpu', '0',
+    #                           '--epochs', '30',
+    #                           '--train_csv', '/data/baiqing/PycharmProjects/yasascore_test/data/cmpnn_data/24w_train.csv',
+    #                           '--validate_csv', '/data/baiqing/PycharmProjects/yasascore_test/data/cmpnn_data/24w_test.csv',
+    #                           '--test_csv', '/data/baiqing/PycharmProjects/yasascore_test/data/cmpnn_data/24w_test.csv'
+    #                           ])
     args = parser.parse_args()
     # modify_train_args(args)
 
