@@ -53,9 +53,13 @@ SCScore|0.621|0.582  | 0.167
     cd sascore_scscore_syba_syba2_model/scipt
     conda env create -f syba_environment.yaml ### Create env
     conda activate syba_env ### activate env
-    python syba-2_training.py
+    cd script
+    python syba-2_training.py --HS_train ../../data/syba_data/24w_train_HS.csv
+                              --ES_train ../../data/syba_data/24w_train_ES.csv 
+                              --count_file ../../data/syba_data/syba_ES_cluster_HS_train_val.csv 
+                              --score_file ../../data/syba_data/syba_ES_cluster_HS_score_train_val.csv  #### Get count_file and score_file
+    cp ../../data/syba_data/syba_ES_cluster_HS_score_train_val.csv ../syba/resources ### Then put the score result "syba_ES_cluster_HS_score_train_val.csv" to syba/resources
     
-    Then put the result "syba_ES_cluster_HS_score_train_val.csv" to syba/resources
 
 ### syba, syba-2, sascore, scscore predict
     cd sascore_scscore_syba_syba2_model/scipt

@@ -17,6 +17,26 @@ from itertools import islice
 import pandas as pd
 from collections import defaultdict
 
+import argparse
+
+parser = argparse.ArgumentParser(description='Generate training score file')
+parser.add_argument('--HS_train', type=str, help='Specify the absolute path to the train-HS.csv')
+parser.add_argument('--ES_train', type=str, help='Specify the absolute path to the train-ES.csv')
+parser.add_argument('--count_file', type=str, help='Specify the absolute path to the result count file')
+parser.add_argument('--score_file', type=str, help='Specify the absolute path to the result score file')
+
+# args = parser.parse_args(['--HS_train', '/data/baiqing/PycharmProjects/yasascore_test/data/syba_data/24w_train_HS.csv',
+#                           '--ES_train', '/data/baiqing/PycharmProjects/yasascore_test/data/syba_data/24w_train_ES.csv',
+#                           '--count_file', '/data/baiqing/PycharmProjects/yasascore_test/data/syba_data/syba_ES_cluster_HS_train_val.csv',
+#                           '--score_file', '/data/baiqing/PycharmProjects/yasascore_test/data/syba_data/syba_ES_cluster_HS_score_train_val.csv'])
+
+args = parser.parse_args()
+
+train_HS = args.HS_train
+train_ES = args.ES_train
+count_file = args.count_file
+score_file = args.score_file
+
 def processFile(path, smi_col=1):
     """
     For given compressed file, function returns number of all compounds and all Morgan fragment types with corresponding number of compounds
@@ -58,8 +78,11 @@ def processFile_1(path):
 
 
 
-hs_fragments, hs_compounds = processFile_1('data/24w_train_HS.csv')
-es_fragments, es_compounds = processFile_1('data/24w_train_ES.csv')
+# hs_fragments, hs_compounds = processFile_1('data/24w_train_HS.csv')
+# es_fragments, es_compounds = processFile_1('data/24w_train_ES.csv')
+
+hs_fragments, hs_compounds = processFile_1(train_HS)
+es_fragments, es_compounds = processFile_1(train_ES)
 
 #
 def mergeFragmentCounts(es_fragments, hs_fragments):
@@ -72,8 +95,11 @@ def mergeFragmentCounts(es_fragments, hs_fragments):
     return fragment_counts
 #
 fragment_counts = mergeFragmentCounts(es_fragments, hs_fragments)
-syba.writeCountFile('syba_ES_cluster_HS_train_val.csv', fragment_counts, (es_compounds, hs_compounds))
-syba.writeScoreFile('syba_ES_cluster_HS_score_train_val.csv', fragment_counts, (es_compounds, hs_compounds))
+# syba.writeCountFile('syba_ES_cluster_HS_train_val.csv', fragment_counts, (es_compounds, hs_compounds))
+# syba.writeScoreFile('syba_ES_cluster_HS_score_train_val.csv', fragment_counts, (es_compounds, hs_compounds))
+
+syba.writeCountFile(count_file, fragment_counts, (es_compounds, hs_compounds))
+syba.writeScoreFile(score_file, fragment_counts, (es_compounds, hs_compounds))
 print('Done!!!')
 
 
