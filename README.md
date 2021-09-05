@@ -75,8 +75,16 @@ SCScore|0.621|0.582  | 0.167
 
 ### syba, syba-2, sascore, scscore predict
     cd sascore_scscore_syba_syba2_model/scipt
-    python diff_score_result.py
-    to get the predicted result of syba, syba-2, sascore, scscore models respectively.
+    
+    ### Get the scoring value of 24w_test_file
+    python diff_score_result.py --in_file ../../data/syba_data/24w_test_df_seed0.csv
+                                --out_file ../../data/syba_data/24w_test_df_seed0_syba_and_mysyba.csv
+    
+    #### Get the scoring value of all_remain_test_file (63w)
+    python diff_score_result.py --in_file ../../data/syba_data/24w_cmpnn_remain_all_test.csv
+                                --out_file ../../data/syba_data/24w_test_df_seed0_syba_and_mysyba_all_test.csv
+    
+   
     
 ### DNN training and predict
     cd DNN_model

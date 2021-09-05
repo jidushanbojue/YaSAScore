@@ -66,16 +66,26 @@ def generate_compare_result(src_file, result_file):
         
 if __name__ == '__main__':
 
+    import argparse
 
+    parser = argparse.ArgumentParser(description='Generate different score (SAScore, SCScore, SYBA, SYBA-2)')
     base_dir = 'projects/data'
+
+    parser.add_argument('--in_file', type=str, help='Specify the absolute path to the test-file')
+    parser.add_argument('--out_file', type=str, help='Specify the absolute path to the result-file')
+
+    # args = parser.parse_args(['--in_file', '/data/baiqing/PycharmProjects/yasascore_test/data/syba_data/24w_test_df_seed0.csv', '--out_file', '/data/baiqing/PycharmProjects/yasascore_test/data/syba_data/24w_test_df_seed0_syba_and_mysyba_test.csv'])
+    args = parser.parse_args()
 
 
     # src_file = os.path.join(base_dir, '24w_test_df_seed0.csv')
     # result_file = os.path.join(base_dir, '24w_test_df_seed0_syba_and_mysyba.csv')
 
-    src_file = os.path.join(base_dir, '24w_cmpnn_remain_all_test.csv')
-    result_file = os.path.join(base_dir, '24w_test_df_seed0_syba_and_mysyba_all_test.csv')
+    # src_file = os.path.join(base_dir, '24w_cmpnn_remain_all_test.csv')
+    # result_file = os.path.join(base_dir, '24w_test_df_seed0_syba_and_mysyba_all_test.csv')
 
+    src_file = args.in_file
+    result_file = args.out_file
 
     generate_compare_result(src_file=src_file, result_file=result_file)
     
