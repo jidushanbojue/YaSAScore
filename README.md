@@ -46,7 +46,15 @@ SCScore|0.621|0.582  | 0.167
     conda env create -f cmpnn.yaml ### Create env
     conda activate cmpnn
 #### Traing process by apply cmpnn model (without cross-validatte)    
-    python train.py --data_path ../data/cmpnn_data/24w_cmpnn.csv --dataset_type classification --num_folds 1 --gpu 0 --seed 0 --epochs 30 --train_csv ../data/cmpnn_data/24w_train_df_seed0.csv --validate_csv ../data/cmpnn_data/24w_val_df_seed0.csv --test_csv ../data/cmpnn_data/24w_test_df_seed0.csv
+    python train.py --data_path ../data/cmpnn_data/24w_cmpnn.csv 
+                    --dataset_type classification 
+                    --num_folds 1 
+                    --gpu 0 
+                    --seed 0 
+                    --epochs 30 
+                    --train_csv ../data/cmpnn_data/24w_train_df_seed0.csv 
+                    --validate_csv ../data/cmpnn_data/24w_val_df_seed0.csv 
+                    --test_csv ../data/cmpnn_data/24w_test_df_seed0.csv
     python predict.py --data_path ../data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_epochs_30
 
 ### SYBA-2 training
@@ -59,6 +67,10 @@ SCScore|0.621|0.582  | 0.167
                               --count_file ../../data/syba_data/syba_ES_cluster_HS_train_val.csv 
                               --score_file ../../data/syba_data/syba_ES_cluster_HS_score_train_val.csv  #### Get count_file and score_file
     cp ../../data/syba_data/syba_ES_cluster_HS_score_train_val.csv ../syba/resources ### Then put the score result "syba_ES_cluster_HS_score_train_val.csv" to syba/resources
+
+    
+    Note: AS when training SYBA, separate (ES and HS) file are needed, that are 24w_train_HS.csv and 24w_train_ES.csv. 
+    The two files are recomined from 24w_train_df_seed0.csv and 24w_val_df_seed0.csv. The purpose of doing this is to provide the comparative result of different models
     
 
 ### syba, syba-2, sascore, scscore predict
