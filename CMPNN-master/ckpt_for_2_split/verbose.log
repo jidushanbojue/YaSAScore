@@ -1,0 +1,105 @@
+Fold 0
+Loading data
+Fold 0
+Loading data
+Number of tasks = 1
+Splitting data with seed 0
+Class sizes
+p_np 0: 50.00%, 1: 50.00%
+Total size = 604,860 | train size = 483,888 | val size = 60,486 | test size = 60,486
+Building model 0
+MoleculeModel(
+  (sigmoid): Sigmoid()
+  (encoder): MPN(
+    (encoder): MPNEncoder(
+      (dropout_layer): Dropout(p=0.0, inplace=False)
+      (act_func): ReLU()
+      (W_i_atom): Linear(in_features=133, out_features=300, bias=False)
+      (W_i_bond): Linear(in_features=147, out_features=300, bias=False)
+      (W_h_atom): Linear(in_features=447, out_features=300, bias=False)
+      (W_h_0): Linear(in_features=300, out_features=300, bias=False)
+      (W_h_1): Linear(in_features=300, out_features=300, bias=False)
+      (W_o): Linear(in_features=600, out_features=300, bias=True)
+      (gru): BatchGRU(
+        (gru): GRU(300, 300, batch_first=True, bidirectional=True)
+      )
+      (lr): Linear(in_features=900, out_features=300, bias=False)
+    )
+  )
+  (ffn): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): Linear(in_features=300, out_features=300, bias=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=300, out_features=1, bias=True)
+  )
+)
+Number of parameters = 2,022,901
+Moving model to cuda
+Epoch 0
+Validation auc = 0.731237
+Epoch 1
+Validation auc = 0.737438
+Epoch 2
+Validation auc = 0.762585
+Epoch 3
+Validation auc = 0.768130
+Epoch 4
+Validation auc = 0.769468
+Epoch 5
+Validation auc = 0.776274
+Epoch 6
+Validation auc = 0.775132
+Epoch 7
+Validation auc = 0.782199
+Epoch 8
+Validation auc = 0.781626
+Epoch 9
+Validation auc = 0.781443
+Epoch 10
+Validation auc = 0.784324
+Epoch 11
+Validation auc = 0.785079
+Epoch 12
+Validation auc = 0.785755
+Epoch 13
+Validation auc = 0.786620
+Epoch 14
+Validation auc = 0.786136
+Epoch 15
+Validation auc = 0.782509
+Epoch 16
+Validation auc = 0.785964
+Epoch 17
+Validation auc = 0.784577
+Epoch 18
+Validation auc = 0.784297
+Epoch 19
+Validation auc = 0.782026
+Epoch 20
+Validation auc = 0.777894
+Epoch 21
+Validation auc = 0.779886
+Epoch 22
+Validation auc = 0.775153
+Epoch 23
+Validation auc = 0.770932
+Epoch 24
+Validation auc = 0.771884
+Epoch 25
+Validation auc = 0.769447
+Epoch 26
+Validation auc = 0.764845
+Epoch 27
+Validation auc = 0.762817
+Epoch 28
+Validation auc = 0.761285
+Epoch 29
+Validation auc = 0.759580
+Model 0 best validation auc = 0.786620 on epoch 13
+Moving model to cuda
+Model 0 test auc = 0.784387
+Ensemble test auc = 0.784387
+1-fold cross validation
+Seed 0 ==> test auc = 0.784387
+Overall test auc = 0.784387 +/- 0.000000
