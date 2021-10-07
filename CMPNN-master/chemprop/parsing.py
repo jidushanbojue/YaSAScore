@@ -30,7 +30,7 @@ def add_predict_args(parser: ArgumentParser):
     parser.add_argument('--checkpoint_dir', type=str,
                         help='Directory from which to load model checkpoints'
                              '(walks directory and ensembles all models that are found)',
-                        default='./ckpt')
+                        default='./ckpt_for_4_split')
     parser.add_argument('--checkpoint_path', type=str,
                         help='Path to model checkpoint (.pt file)')
     parser.add_argument('--batch_size', type=int, default=50,
@@ -74,7 +74,7 @@ def add_train_args(parser: ArgumentParser):
                         help='Method of generating additional features')
     parser.add_argument('--features_path', type=str, nargs='*',
                         help='Path to features to use in FNN (instead of features_generator)')                   
-    parser.add_argument('--save_dir', type=str, default='./ckpt',
+    parser.add_argument('--save_dir', type=str, default='./ckpt_for_4_split',
                         help='Directory where model checkpoints will be saved')
     parser.add_argument('--save_smiles_splits', action='store_true', default=False,
                         help='Save smiles for each train/val/test splits for prediction convenience later')
