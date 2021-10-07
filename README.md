@@ -66,7 +66,7 @@ SCScore|0.621|0.582  | 0.167
                               --ES_train ../../data/syba_data/24w_train_ES.csv 
                               --count_file ../../data/syba_data/syba_ES_cluster_HS_train_val.csv 
                               --score_file ../../data/syba_data/syba_ES_cluster_HS_score_train_val.csv  #### Get count_file and score_file
-    cp ../../data/syba_data/syba_ES_cluster_HS_score_train_val.csv ../syba/resources ### Then put the score result "syba_ES_cluster_HS_score_train_val.csv" to syba/resources
+    cp ../../data/syba_data/syba_ES_cluster_HS_train_val.csv ../syba/resources ### Then put the score result "syba_ES_cluster_HS_score_train_val.csv" to syba/resources
 
     
     Note: AS when training SYBA, separate (ES and HS) file are needed, that are 24w_train_HS.csv and 24w_train_ES.csv. 
@@ -87,8 +87,30 @@ SCScore|0.621|0.582  | 0.167
    
     
 ### DNN training and predict
+    Note: If split by shortest reaction steps 3, train file is dnn_data/24w_train_df_seed0.csv, validate file is dnn_data/24w_val_df_seed0.csv, test file is dnn_data/24w_test_df_seed0.csv
+          When adding the remained test items, the test file is dnn_data/24w_cmpnn_remain_all_test.csv
+    
+          If split by shortest reaction steps 2, train file is dnn_data/60w_train_df_seed0.csv, validate file is dnn_data/60w_val_df_seed0.csv, test file is dnn_data/60w_test_df_seed0.csv
+          When adding the remained test items, the test file is dnn_data/60w_cmpnn_remain_all_test_2_split.csv
+
+          If split by shortest reaction steps 4, train file is dnn_data/8w_train_df_seed0.csv, validate file is dnn_data/8w_val_df_seed0.csv, test file is dnn_data/8w_test_df_seed0.csv
+          When adding the remained test items, the test file is dnn_data/8w_cmpnn_remain_all_test_4_split.csv
+    
     cd DNN_model
-    python dnn_model.py
+    python train.py --train_file ../../data/dnn_data/24w_train_df_seed0.csv
+                    --val_file ../../data/dnn_data/24w_val_df_seed0.csv
+                    --save_path ../../data/dnn_data/split_by_3
+                    --project_name split_3
+                    --gpu_index 0
+    
+    python predict.py --model_path ../../data/dnn_data/split_by_3/split_3.hdf5
+                      --test_file  ../../data/dnn_data/24w_test_df_seed0.csv
+                      --save_path  ../../data/dnn_data/split_by_3
+                      --project_name split_3
+
+
+    
+          
     
 
 
