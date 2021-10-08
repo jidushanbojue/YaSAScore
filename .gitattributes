@@ -1,2 +1,6 @@
 uspto_reaction_role_designation.knwf filter=lfs diff=lfs merge=lfs -text
 data/syba_data/80w_test_df_seed0_syba_and_mysyba_all_test_4_split.csv filter=lfs diff=lfs merge=lfs -text
+data/chemical_reaction_network/all_reaction_uspto.csv filter=lfs diff=lfs merge=lfs -text
+data/chemical_reaction_network/all_structure_uspto.csv filter=lfs diff=lfs merge=lfs -text
+data/chemical_reaction_network/reaction_to_structure_USPTO.csv filter=lfs diff=lfs merge=lfs -text
+data/chemical_reaction_network/uspto_graph_with_relationship.graphml filter=lfs diff=lfs merge=lfs -text
