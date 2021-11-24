@@ -108,7 +108,20 @@ SCScore|0.621|0.582  | 0.167
                       --save_path  ../../data/dnn_data/split_by_3
                       --project_name split_3
 
-
+### View ES and HS distribution 
+    cd picture
+    python get_ES_HS_file.py --train_file ../data/cmpnn_data/24w_train_df_seed0.csv
+                             --val_file   ../data/cmpnn_data/24w_val_df_seed0.csv
+                             --ES_out     ../data/cmpnn_data/24w_ES.csv
+                             --HS_out     ../data/cmpnn_data/24w_HS.csv
+    
+    python generate_physicochemical_property.py --ES_file ../data/cmpnn_data/24w_ES.csv
+                                                --HS_file ../data/cmpnn_data/24w_HS.csv
+                                                --out     ../data/cmpnn_data/24w_ES_HS_property.csv
+    
+    python plot_physicochemical_property.py --in_file ../data/cmpnn_data/24w_ES_HS_property.csv
+                                            --threshold 3
+                                            --out 24w_property_kdeplot.png
     
           
     
