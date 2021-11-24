@@ -84,37 +84,6 @@ def cal_descriptor(train_file, val_file, test_file, result_file):
     print('Done')
 
 
-# def plot_pca_tsne(src_file, threshold, result_pca):
-#     df = pd.read_csv(src_file)
-#     # df_HS = df[df['label'] == 0].sample(n=120000, random_state=42)
-#     # df_ES = df[df['label'] == 1].sample(n=120000, random_state=42)
-#
-#     df_HS = df[df['targets'] == 0].sample(n=5000, random_state=42)
-#     df_ES = df[df['targets'] == 1].sample(n=5000, random_state=42)
-#
-#     plt.figure(figsize=(8, 8), dpi=600)
-#     plt.scatter(df_HS['PC1'], df_HS['PC2'], c='g', marker='^', s=20, label='HS')
-#     plt.scatter(df_ES['PC1'], df_ES['PC2'], c='r', marker='*', s=20, label='ES')
-#     plt.legend(fontsize=15)
-#
-#     font1 = {'family': 'Nimbus Roman',
-#              'weight': 'bold',
-#              'style': 'normal',
-#              'size': 15}
-#
-#
-#     plt.xlabel('PC1', font1)
-#     plt.ylabel('PC2', font1)
-#     # plt.savefig('24w_last_PCA.png')
-#     plt.title('PCA analysis of ES:HS dataset (split by {} reaction path)'.format(threshold))
-#
-#     plt.savefig(result_pca)
-#
-#     # plt.show()
-
-
-
-
 def plot_pca_tsne(src_file, threshold, result_pca):
     df = pd.read_csv(src_file)
     # df_HS = df[df['label'] == 0].sample(n=120000, random_state=42)
@@ -165,11 +134,12 @@ if __name__ == '__main__':
     #     '--val_file', '../data/cmpnn_data/8w_val_df_seed0.csv',
     #     '--test_file', '../data/cmpnn_data/8w_test_df_seed0.csv',
     #     '--pca_result', '../data/cmpnn_data/8w_pca_result.csv',
+    #     '--threshold', 4,
     #     '--out', '8w_pca_picture.png'
     # ])
 
     args = parser.parse_args()
 
-    # cal_descriptor(args.train_file, args.val_file, args.test_file, args.pca_result)
+    cal_descriptor(args.train_file, args.val_file, args.test_file, args.pca_result)
     plot_pca_tsne(args.pca_result, args.threshold, args.out)
 

@@ -122,6 +122,13 @@ SCScore|0.621|0.582  | 0.167
     python plot_physicochemical_property.py --in_file ../data/cmpnn_data/24w_ES_HS_property.csv
                                             --threshold 3
                                             --out 24w_property_kdeplot.png
+
+    python chemical_space_all_training_data.py --train_file ../data/cmpnn_data/24w_train_df_seed0.csv
+                                               --val_file   ../data/cmpnn_data/24w_val_df_seed0.csv
+                                               --test_file  ../data/cmpnn_data/24w_test_df_seed0.csv
+                                               --pca_result  ../data/cmpnn_data/24w_pca_result.csv
+                                               --threshold   3
+                                               --out         24w_pca_picture.png
     
           
     
