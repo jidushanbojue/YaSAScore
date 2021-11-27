@@ -111,7 +111,7 @@ def plot_pca_tsne(src_file, threshold, result_pca):
     plt.xlabel('PC1', font_axis)
     plt.ylabel('PC2', font_axis)
     # plt.savefig('24w_last_PCA.png')
-    plt.title('PCA analysis of ES:HS dataset (split by {} reaction path)'.format(threshold), font_title)
+    plt.title('PCA analysis of ES:HS dataset (split by {} Reaction Steps)'.format(threshold), font_title)
 
     plt.savefig(result_pca)
 
@@ -140,6 +140,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    cal_descriptor(args.train_file, args.val_file, args.test_file, args.pca_result)
+    # cal_descriptor(args.train_file, args.val_file, args.test_file, args.pca_result)
     plot_pca_tsne(args.pca_result, args.threshold, args.out)
 
