@@ -28,7 +28,7 @@ def data_distribution_hist(file):
              'size': 20}
 
 
-    sns.set(style='darkgrid')
+    sns.set(style='white')
     ax = sns.countplot(x='min', data=df, color='lightskyblue')
 
 
@@ -58,8 +58,10 @@ def data_distribution_hist_small_threshold_7_11(file):
              'size': 20}
 
 
-    sns.set(style='darkgrid')
+    sns.set(style='white')
     ax = sns.countplot(x='min', data=df_small, color='lightskyblue')
+    sns.despine(top=True, right=True, left=False, bottom=False)
+
 
 
     ax.yaxis.set_major_formatter(formatter_1000)
@@ -89,8 +91,9 @@ def data_distribution_hist_small_threshold_12_17(file):
              'size': 20}
 
 
-    sns.set(style='darkgrid')
+    sns.set(style='white')
     ax = sns.countplot(x='min', data=df_small, color='lightskyblue')
+    sns.despine(top=True, right=True, left=False, bottom=False)
 
 
     # ax.yaxis.set_major_formatter(formatter_100)

@@ -87,7 +87,7 @@ def DNN_ECFP_training(train_file, val_file, result_path, project_name):
     model.add(Dense(2))
     model.add(Activation('softmax'))
 
-    early_stopping = EarlyStopping(monitor='val_loss', patience=20)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=100)
 
     csv_logger = CSVLogger(os.path.join(result_path, project_name+'.log'), append=True)
 

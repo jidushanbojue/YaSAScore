@@ -128,7 +128,7 @@ Custom features generator template.
 
 Note: The name you use to register the features generator is the name
 you will specify on the command line when using the --features_generator <name> flag.
-Ex. python train.py ... --features_generator custom ...
+Ex. python DNN_ECFP_train.py ... --features_generator custom ...
 
 @register_features_generator('custom')
 def custom_features_generator(mol: Molecule) -> np.ndarray:

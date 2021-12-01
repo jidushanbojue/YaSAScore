@@ -72,15 +72,16 @@ def predict(model, test_file, save_path, project_name):
 
     c = confusion_matrix(test_labels_one_hot[:, 1], pred)
     matt = matthews_corrcoef(test_labels_one_hot[:, 1], pred)
+    acc = accuracy_score(test_labels_one_hot[:, 1], pred)
 
     fpr, tpr, threshold = roc_curve(test_labels_one_hot[:, 1], predict_arr[:, 1])
     roc_auc = auc(fpr, tpr)
 
-    font1 = {'family': 'Times New Roman',
+    font1 = {'family': 'Nimbus Roman',
              'weight': 'normal',
              'size': 23}
 
-    font2 = {'family': 'Times New Roman',
+    font2 = {'family': 'Nimbus Roman',
              'weight': 'normal',
              'size': 25}
 
@@ -90,9 +91,9 @@ def predict(model, test_file, save_path, project_name):
     plt.ylabel('True positive rate', fontdict=font1)
     plt.title('DNN classifier (AUC={})'.format(roc_auc), fontdict=font2)
     # plt.legend('R^2 of test: {}'.format(test_score))
-    # plt.text(0.5, 0.6, 'Test score is {}'.format(accuracy))
+    # plt.text(0.5, 0.6, 'Test score is {}'.format(acc))
     plt.text(0.5, 0.5, 'matthews corrcoef is {}'.format(matt))
-    # plt.text(0.5, 0.4, 'accuracy score is {}'.format(accuracy))
+    plt.text(0.5, 0.4, 'accuracy score is {}'.format(acc))
     plt.text(0.5, 0.3, 'confusion corrcoef is {}'.format(c))
 
     # plt.savefig('ECFP_from_all_data_RF_roc_AUC1_n_estimator1000_oobTrue_mean.png')

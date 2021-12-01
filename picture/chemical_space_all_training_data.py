@@ -95,6 +95,7 @@ def plot_pca_tsne(src_file, threshold, result_pca):
     plt.figure(figsize=(8, 8), dpi=600)
     plt.scatter(df_HS['PC1'], df_HS['PC2'], c='g', marker='^', s=20, label='HS')
     plt.scatter(df_ES['PC1'], df_ES['PC2'], c='r', marker='*', s=20, label='ES')
+    sns.despine(top=True, right=True, left=False, bottom=False)
     plt.legend(fontsize=15)
 
     font_title = {'family': 'Nimbus Roman',
@@ -122,9 +123,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Plot distribution picture of different data set')
     # base_dir = 'projects/data'
 
-    parser.add_argument('--train_file', type=str, help='Specify the absolute path to the train-file')
-    parser.add_argument('--val_file', type=str, help='Specify the absolute path to the val-file')
-    parser.add_argument('--test_file', type=str, help='Specify the absolute path to the test-file')
+    # parser.add_argument('--train_file', type=str, help='Specify the absolute path to the train-file')
+    # parser.add_argument('--val_file', type=str, help='Specify the absolute path to the val-file')
+    # parser.add_argument('--test_file', type=str, help='Specify the absolute path to the test-file')
     parser.add_argument('--pca_result', type=str, help='Specify the absolute path to the pca result file')
     parser.add_argument('--threshold', type=str, help='can be 2, 3, 4')
     parser.add_argument('--out', type=str, help='Specify the picture path')
