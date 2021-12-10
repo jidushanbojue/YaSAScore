@@ -4,14 +4,14 @@ import joblib
 import pandas as pd
 from sklearn.metrics import confusion_matrix, matthews_corrcoef, accuracy_score, roc_curve, auc
 from sklearn.ensemble import RandomForestClassifier
-from rdkit import Chem, DataStructs
-from rdkit.Chem import Descriptors, Crippen
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout, BatchNormalization
-from keras.callbacks import EarlyStopping, CSVLogger, ReduceLROnPlateau, ModelCheckpoint
-from keras.utils import Sequence
-import keras
-from keras import regularizers
+# from rdkit import Chem, DataStructs
+# from rdkit.Chem import Descriptors, Crippen
+# from keras.models import Sequential
+# from keras.layers import Dense, Activation, Dropout, BatchNormalization
+# from keras.callbacks import EarlyStopping, CSVLogger, ReduceLROnPlateau, ModelCheckpoint
+# from keras.utils import Sequence
+# import keras
+# from keras import regularizers
 
 import numpy as np
 
@@ -43,6 +43,17 @@ def RF_six_training(train_desc_file, test_desc_file, save_path, project_name):
     matt = matthews_corrcoef(test_value, pred)
     fpr, tpr, threshold = roc_curve(test_value, y_prob[:, 1])
     roc_auc = auc(fpr, tpr)
+    stat_result = {'AUC': [roc_auc],
+                   'ACC': [accuracy],
+                   'MaTT': [matt]}
+    stat_df = pd.DataFrame(stat_result)
+    stat_df.to_csv(os.path.join(save_path, 'stat.csv'))
+
+
+
+
+
+
     # stats_list.append({'pred': pred,
     #                     'accuracy': accuracy,
     #                     'matthews_corrcoef': matt,
@@ -61,10 +72,10 @@ if __name__ == '__main__':
     parser.add_argument('--project_name', type=str, help='Specify the project name')
 
     args = parser.parse_args([
-        '--train_file', '/data/baiqing/PycharmProjects/YaSAScore/data/dnn_data/60w_train_six_desc.csv',
-        '--test_file', '/data/baiqing/PycharmProjects/YaSAScore/data/dnn_data/60w_test_six_desc.csv',
-        '--save_path', '/data/baiqing/PycharmProjects/YaSAScore/data/RF_data/split_by_2_physicochem',
-        '--project_name', 'split_2_physicochem',
+        '--train_file', '/data/baiqing/PycharmProjects/YaSAScore/data/dnn_data/24w_train_six_desc.csv',
+        '--test_file', '/data/baiqing/PycharmProjects/YaSAScore/data/dnn_data/24w_test_six_desc.csv',
+        '--save_path', '/data/baiqing/PycharmProjects/YaSAScore/data/RF_data/split_by_3_physicochem',
+        '--project_name', 'split_3_physicochem',
 
     ])
 

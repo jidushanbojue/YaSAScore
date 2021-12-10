@@ -71,7 +71,7 @@ def sns_kde(file, threshold, result):
     axes[1, 2].xaxis.label.set_size(20)
     axes[1, 2].yaxis.label.set_size(20)
 
-    fig.suptitle('Distribution map of ES and HS dataset (split by {} reaction path)'.format(threshold), fontsize=30)
+    fig.suptitle('Physicochemical properties distribution of Set(SRP:{})'.format(threshold), fontsize=30)
 
 
     # fig.legend(labels=['ES', 'HS'], loc='upper center')
@@ -79,7 +79,7 @@ def sns_kde(file, threshold, result):
 
     # plt.legend()
     # plt.savefig('property_kdeplot_24w.png')
-    plt.savefig(result)
+    plt.savefig(result, dpi=600)
     plt.show()
 
 def sns_kde_plot(file):

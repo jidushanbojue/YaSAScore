@@ -112,8 +112,8 @@ def plot_pca_tsne(src_file, threshold, result_pca):
     plt.xlabel('PC1', font_axis)
     plt.ylabel('PC2', font_axis)
     # plt.savefig('24w_last_PCA.png')
-    plt.title('PCA analysis of ES:HS dataset (split by {} Reaction Steps)'.format(threshold), font_title)
-
+    # plt.title('PCA analysis of ES:HS dataset (split by {} Reaction Steps)'.format(threshold), font_title)
+    plt.title('PCA analysis of Set(SRP:{})'.format(threshold), font_title)
     plt.savefig(result_pca)
 
 

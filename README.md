@@ -55,7 +55,7 @@ SCScore|0.621|0.582  | 0.167
                     --train_csv ../data/cmpnn_data/24w_train_df_seed0.csv 
                     --validate_csv ../data/cmpnn_data/24w_val_df_seed0.csv 
                     --test_csv ../data/cmpnn_data/24w_test_df_seed0.csv
-    python predict.py --data_path ../data/cmpnn_data/24w_cmpnn_df_seed0.csv --checkpoint_dir ckpt_for_3_split
+    python predict.py --data_path ../data/cmpnn_data/24w_test_df_seed0.csv --checkpoint_dir ckpt_for_3_split
 
 ### SYBA-2 training
     cd sascore_scscore_syba_syba2_model/scipt

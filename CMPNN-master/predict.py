@@ -20,4 +20,4 @@ if __name__ == '__main__':
     df = pd.DataFrame({'smiles':smiles})
     for i in range(len(pred[0])):
         df[f'pred_{i}'] = [item[i] for item in pred]
-    df.to_csv(f'./predict.csv', index=False)
+    df.to_csv(f'./80w_all_test_seed0_cpmnn_predict.csv', index=False)
