@@ -167,7 +167,7 @@ note: some big file such as reaction_all_structure_uspto, reaction_to_structure_
 
 ### **The distribution of the dataset**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/figure7.png "network")
-### **PCA analysis on the physicochemical descriptors of Subsets
+### **PCA analysis on the physicochemical descriptors of Subsets**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/figure8.png "network")
 
 
