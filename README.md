@@ -5,16 +5,16 @@ The code was built based on CMPNN (https://github.com/SY575/CMPNN), SYBA(https:/
 
 Prediction results of compound synthesis accessibility (SA) based on the a refined chemical network constructed on the USPTO and Pistachio reaction datasets. 
 
-**The workflow of YaSAScore**
+### **The workflow of YaSAScore**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/TOC.png "network")
 
-**The Subgraph of the reaction knowledge graph network**
+### **The Subgraph of the reaction knowledge graph network**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/network_ps.png "network")
 
-**The reaction paths of product (node: 2070779)**
+### **The reaction paths of product (node: 2070779)**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/2070779_3_sample_graphml_ps.png "network")
 
-**The performance of different models on the balanced test set**
+### **The performance of different models on the balanced test set**
 
 Partition Criterion | MODEL |  AUC  |  ACC  | MCC
 :---: | :---: |:-----:|:-----:| :---:
@@ -163,9 +163,12 @@ note: some big file such as reaction_all_structure_uspto, reaction_to_structure_
                                                --pca_result  ../data/cmpnn_data/24w_pca_result.csv
                                                --threshold   3
                                                --out         24w_pca_picture.png
-    
-    
-          
+
+
+### **The distribution of the dataset**
+![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/figure7.png "network")
+### **PCA analysis on the physicochemical descriptors of Subsets
+![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/figure8.png "network")
 
 
 
