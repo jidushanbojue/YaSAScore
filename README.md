@@ -5,13 +5,16 @@ The code was built based on CMPNN (https://github.com/SY575/CMPNN), SYBA(https:/
 
 Prediction results of compound synthesis accessibility (SA) based on the a refined chemical network constructed on the USPTO and Pistachio reaction datasets. 
 
-###**The Subgraph of the reaction knowledge graph network**
+**The workflow of YaSAScore**
+![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/TOC.png "network")
+
+**The Subgraph of the reaction knowledge graph network**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/network_ps.png "network")
 
-###**The reaction paths of product (node: 2070779)**
+**The reaction paths of product (node: 2070779)**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/2070779_3_sample_graphml_ps.png "network")
 
-###**The performance of different models on the balanced test set**
+**The performance of different models on the balanced test set**
 
 Partition Criterion | MODEL |  AUC  |  ACC  | MCC
 :---: | :---: |:-----:|:-----:| :---:
