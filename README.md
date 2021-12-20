@@ -35,7 +35,7 @@ SRP:4 | SAScore | 0.45  | 0.512 | -0.021
 SRP:4 | SCScore | 0.591 | 0.517 | 0.082
 
 
-![network](file:///home/cadd/Desktop/ranting/24w_property_kdeplot_ps.png "network")
+![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/2070779_3_sample_graphml_ps.png "network")
 
 ## Quick start
 
