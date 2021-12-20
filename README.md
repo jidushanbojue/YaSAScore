@@ -5,14 +5,37 @@ The code was built based on CMPNN (https://github.com/SY575/CMPNN), SYBA(https:/
 
 Prediction results of compound synthesis accessibility (SA) based on the a refined chemical network constructed on the USPTO and Pistachio reaction datasets. 
 
-MODEL | ROC-AUC | ACC | MCC
----  | :---: | :---: | :---:
-CMPNN| 0.791 | 0.715 | 0.434
-DNN-ECFP|0.749|0.685 | 0.371
-SYBA | 0.465 | 0.497 | -0.012
-SYBA-2|0.76  | 0.69  | 0.382
-SAScore|0.513| 0.498 | -0.011
-SCScore|0.621|0.582  | 0.167
+###**The performance of different models on the balanced test set**
+
+Partition Criterion | MODEL |  AUC  |  ACC  | MCC
+:---: | :---: |:-----:|:-----:| :---:
+SRP:2 | DNN-PCD | 0.576 | 0.511 | 0.044
+SRP:2 | RF-PCD | 0.632 | 0.592 | 0.183
+SRP:2 | CMPNN | 0.784 | 0.711 | 0.432
+SRP:2 | DNN-ECFP | 0.72  | 0.667 | 0.333
+SRP:2 | SYBA | 0.491 | 0.505 | 0.02
+SRP:2 | SYBA-2 | 0.739 | 0.668 | 0.343
+SRP:2 | SAScore | 0.535 | 0.501 | -0.03
+SRP:2 | SCScore | 0.613 | 0.55  | 0.128
+SRP:3 | DNN-PCD | 0.615 | 0.584 | 0.168
+SRP:3 | RF-PCD | 0.627 | 0.588 | 0.177
+SRP:3 | CMPNN | 0.791 | 0.715 | 0.434
+SRP:3 | DNN-ECFP | 0.751 | 0.687 | 0.373
+SRP:3 | SYBA | 0.465 | 0.496 | -0.012
+SRP:3 | SYBA-2 | 0.76  | 0.69  | 0.382
+SRP:3 | SAScore | 0.513 |  0.5  | -0.011
+SRP:3 | SCScore | 0.621 | 0.543 | 0.116
+SRP:4 | DNN-PCD |  0.6  | 0.565 | 0.132
+SRP:4 | RF-PCD | 0.627 | 0.583 | 0.168
+SRP:4 | CMPNN | 0.814 | 0.733 | 0.466
+SRP:4 | DNN-ECFP | 0.802 | 0.732 | 0.465
+SRP:4 | SYBA | 0.448 | 0.491 | -0.061
+SRP:4 | SYBA-2 |  0.8  | 0.727 | 0.453
+SRP:4 | SAScore | 0.45  | 0.512 | -0.021
+SRP:4 | SCScore | 0.591 | 0.517 | 0.082
+
+
+![network](file:///home/cadd/Desktop/ranting/24w_property_kdeplot_ps.png "network")
 
 ## Quick start
 
