@@ -41,7 +41,7 @@ SCScore|0.621|0.582  | 0.167
     python generate_network_multiprocess.py -i ../data/chemical_reaction_network/reaction_to_structure_USPTO.csv -o ../data/chemical_reaction_network/uspto_graph_with_relationship.graphml -ro ../data/chemical_reaction_network/uspto_graph_with_relationship_reverse.graphml -d ../data/chemical_reaction_network/uspto_graph_degree.csv -n_cpu 10
     python get_reaction_steps.py -gf ../../data/chemical_reaction_network/uspto_graph_reverse.graph -df ../../data/chemical_reaction_network/degree.csv -rf ../../data/chemical_reaction_network/reaction_to_structure_USPTO_test.csv -o ../../data/chemical_reaction_network/shortest_path
     
-    note: some big file such as reaction_all_structure_uspto, reaction_to_structure_USPTO.csv, uspto_graph_with_relationship.graphml are available at [google drive](https://drive.google.com/drive/folders/18zyTaHIgmmG0C2dnm8BDISYOPNW1Jhi0) now.
+    note: some big file such as reaction_all_structure_uspto, reaction_to_structure_USPTO.csv, uspto_graph_with_relationship.graphml are available at [google drive](https://drive.google.com/drive/folders/18zyTaHIgmmG0C2dnm8BDISYOPNW1Jhi0)
 
 ### CMPNN training and predict
     cd CMPNN-master
