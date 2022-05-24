@@ -14,6 +14,10 @@ Prediction results of compound synthesis accessibility (SA) based on the a refin
 ### **The reaction paths of product (node: 2070779)**
 ![network](https://github.com/jidushanbojue/YaSAScore/blob/master/picture/2070779_3_sample_graphml_ps.png "network")
 
+### **Model architecture of GraphRXN**
+
+![Figure1](https://github.com/jidushanbojue/GraphRXN/tree/master/picture/Figure1_2_ps.png "Figure1")
+
 ### **The performance of different models on the balanced test set**
 
 Partition Criterion | MODEL |  AUC  |  ACC  | MCC
